@@ -35,7 +35,7 @@ function Dashboard() {
 
             const response =
                 await axios.get(
-                    `http://localhost:5000/api/user/${storedUser.id}`
+                    `https://speakflow-ai-production.up.railway.app/api/user/${storedUser.id}`
                 );
 
             setUserData(

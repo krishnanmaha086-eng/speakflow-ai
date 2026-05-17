@@ -19,7 +19,7 @@ function Community() {
 
             const response =
                 await axios.get(
-                    "http://localhost:5000/api/community"
+                    "https://speakflow-ai-production.up.railway.app/api/community"
                 );
 
             setPosts(
@@ -53,7 +53,7 @@ function Community() {
                 );
 
             await axios.post(
-                "http://localhost:5000/api/community",
+                "https://speakflow-ai-production.up.railway.app/api/community",
                 {
                     name: user.name,
                     post

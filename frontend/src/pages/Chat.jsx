@@ -44,7 +44,7 @@ function Chat() {
 
             const response =
                 await axios.get(
-                    "http://localhost:5000/api/chats"
+                    "https://speakflow-ai-production.up.railway.app/api/chats"
                 );
 
             const formattedChats = [];
@@ -140,7 +140,7 @@ function Chat() {
 
             const response =
                 await axios.post(
-                    "http://localhost:5000/api/chat",
+                    "https://speakflow-ai-production.up.railway.app/api/chat",
                     {
                         message:
                             voiceText,
@@ -315,7 +315,7 @@ function Chat() {
             setVoiceText("");
 
             await axios.delete(
-                "http://localhost:5000/api/chats"
+                "https://speakflow-ai-production.up.railway.app/api/chats"
             );
 
             alert(

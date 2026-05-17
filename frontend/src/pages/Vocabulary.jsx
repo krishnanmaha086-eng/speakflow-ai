@@ -21,7 +21,7 @@ function Vocabulary() {
 
             const response =
                 await axios.get(
-                    "http://localhost:5000/api/vocabulary"
+                    "https://speakflow-ai-production.up.railway.app/api/vocabulary"
                 );
 
             setWordData(
