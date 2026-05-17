@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+body {
+
+    background-color: var(--main-bg);
+
+}
+
+.dark-theme {
+
+    background-color: #0f172a;
+    color: white;
+    min-height: 100vh;
+
+}
+
+.light-theme {
+
+    background-color: #f8fafc;
+    color: black;
+    min-height: 100vh;
+
+}
