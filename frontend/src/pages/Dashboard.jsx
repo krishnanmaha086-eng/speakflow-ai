@@ -31,26 +31,26 @@ function Dashboard() {
     /* Fetch User Data */
     const fetchUser = async () => {
 
-    try {
+        try {
 
-        if (!storedUser?._id) {
-            console.log("User ID missing");
-            return;
+            if (!storedUser?._id) {
+                console.log("User ID missing");
+                return;
+            }
+
+            const response = await axios.get(
+                `https://speakflow-ai-production.up.railway.app/api/user/${storedUser._id}`
+            );
+
+            setUserData(response.data);
+
+        } catch (error) {
+
+            console.log(error);
+
         }
 
-        const response = await axios.get(
-            `https://speakflow-ai-production.up.railway.app/api/user/${storedUser._id}`
-        );
-
-        setUserData(response.data);
-
-    } catch (error) {
-
-        console.log(error);
-
-    }
-
-};
+    };
 
     /* Streak Logic */
     useEffect(() => {
@@ -369,52 +369,28 @@ Practice speaking slowly and use complete sentences daily.
 
                 </div>
 
-                {/* Chart */}
-                <div className="bg-slate-800 p-4 md:p-8 rounded-2xl mt-6 md:mt-8">
 
-                    <h2 className="text-2xl font-bold mb-6">
-
-                        📈 Weekly Progress
-
-                    </h2>
-
-                    <div className="w-full h-[300px] md:h-[400px]">
-
-                        <ResponsiveContainer width="100%" height="100%">
-
-                            <LineChart
-                                data={analyticsData}
-                            >
-
-                                <CartesianGrid
-                                    strokeDasharray="3 3"
-                                    stroke="#475569"
-                                />
-
-                                <XAxis
-                                    dataKey="day"
-                                    stroke="#cbd5e1"
-                                />
-
-                                <YAxis
-                                    stroke="#cbd5e1"
-                                />
-
-                                <Tooltip />
-
-                                <Line
-                                    type="monotone"
-                                    dataKey="score"
-                                    stroke="#3b82f6"
-                                    strokeWidth={3}
-                                />
-
-                            </LineChart>
-
-                        </ResponsiveContainer>
-
-                    </div>
-
+                <div
+                    style={{
+                        width: "100%",
+                        height: "400px",
+                        minHeight: "400px"
+                    }}
+                >
+                    <ResponsiveContainer width="100%" height={400}>
+                        <LineChart data={analyticsData}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="day" />
+                            <YAxis />
+                            <Tooltip />
+                            <Line
+                                type="monotone"
+                                dataKey="score"
+                                stroke="#3b82f6"
+                                strokeWidth={3}
+                            />
+                        </LineChart>
+                    </ResponsiveContainer>
                 </div>
 
                 {/* Badges */}

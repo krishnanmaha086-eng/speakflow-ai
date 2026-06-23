@@ -21,7 +21,6 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-app.use("/api/google-auth", googleAuthRoutes);
 
 /* Groq Setup */
 const groq = new Groq({
