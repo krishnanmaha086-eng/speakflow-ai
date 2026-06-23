@@ -33,13 +33,13 @@ function Dashboard() {
 
     try {
 
-        if (!storedUser?.id) {
+        if (!storedUser?._id) {
             console.log("User ID missing");
             return;
         }
 
         const response = await axios.get(
-            `https://speakflow-ai-production.up.railway.app/api/user/${storedUser.id}`
+            `https://speakflow-ai-production.up.railway.app/api/user/${storedUser._id}`
         );
 
         setUserData(response.data);
