@@ -39,6 +39,9 @@ app.get("/", (req, res) => {
 /* Auth Routes */
 app.use("/api/auth", authRoutes);
 
+/* Google Auth Routes */
+app.use("/api/google-auth", googleAuthRoutes);
+
 /* Chat Route */
 app.post("/api/chat", async (req, res) => {
 
@@ -422,7 +425,7 @@ app.delete("/api/chats", async (req, res) => {
 
 });
 
-const PORT = 5000;
+const PORT = 5000;  
 
 app.listen(PORT, () => {
 
