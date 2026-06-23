@@ -32,12 +32,20 @@ router.post("/", async (req, res) => {
         name,
         email,
         password: "google-auth-user",
+        communicationScore: 0,
+        messagesCount: 0,
       });
     }
 
     res.status(200).json({
       success: true,
-      user,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        communicationScore: user.communicationScore,
+        messagesCount: user.messagesCount,
+      },
     });
 
   } catch (error) {

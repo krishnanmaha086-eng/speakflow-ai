@@ -31,24 +31,26 @@ function Dashboard() {
     /* Fetch User Data */
     const fetchUser = async () => {
 
-        try {
+    try {
 
-            const response =
-                await axios.get(
-                    `https://speakflow-ai-production.up.railway.app/api/user/${storedUser.id}`
-                );
-
-            setUserData(
-                response.data
-            );
-
-        } catch (error) {
-
-            console.log(error);
-
+        if (!storedUser?.id) {
+            console.log("User ID missing");
+            return;
         }
 
-    };
+        const response = await axios.get(
+            `https://speakflow-ai-production.up.railway.app/api/user/${storedUser.id}`
+        );
+
+        setUserData(response.data);
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+
+};
 
     /* Streak Logic */
     useEffect(() => {
