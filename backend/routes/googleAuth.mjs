@@ -8,6 +8,10 @@ const client = new OAuth2Client(
   process.env.GOOGLE_CLIENT_ID
 );
 
+router.get("/", (req, res) => {
+  res.send("Google Auth Route Working");
+});
+
 router.post("/", async (req, res) => {
   try {
     const { credential } = req.body;
