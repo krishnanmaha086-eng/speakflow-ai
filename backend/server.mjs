@@ -9,6 +9,9 @@ import Chat from "./models/Chat.mjs";
 import User from "./models/User.mjs";
 import Community from "./models/Community.mjs";
 
+
+import googleAuthRoutes from "./routes/googleAuth.mjs";
+
 dotenv.config();
 
 connectDB();
@@ -18,6 +21,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
+app.use("/api/google-auth", googleAuthRoutes);
 
 /* Groq Setup */
 const groq = new Groq({
