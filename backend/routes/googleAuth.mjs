@@ -51,17 +51,17 @@ router.post("/", async (req, res) => {
     }
 
     res.status(200).json({
-      success: true,
-      message: "Google Login Successful",
-      user: {
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        communicationScore: user.communicationScore,
-        messagesCount: user.messagesCount,
-        streak: user.streak,
-      },
-    });
+  success: true,
+  message: "Google Login Successful",
+  user: {
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+    communicationScore: user.communicationScore,
+    messagesCount: user.messagesCount,
+    streak: user.streak,
+  },
+});
 
   } catch (error) {
     console.log("Google Auth Error:", error);
