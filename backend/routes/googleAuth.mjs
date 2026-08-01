@@ -8,7 +8,6 @@ const client = new OAuth2Client(
   process.env.GOOGLE_CLIENT_ID
 );
 
-/* Test Route */
 router.get("/", (req, res) => {
   res.send("Google Auth Route Working");
 });
