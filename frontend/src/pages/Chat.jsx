@@ -44,7 +44,7 @@ function Chat() {
 
             const response =
                 await axios.get(
-                    "https://speakflow-ai-production.up.railway.app/api/chats"
+                    "https://speakflow-ai-ruby.vercel.app/api/chats"
                 );
 
             const formattedChats = [];
@@ -140,7 +140,7 @@ function Chat() {
 
             const response =
                 await axios.post(
-                    "https://speakflow-ai-production.up.railway.app/api/chat",
+                    "https://speakflow-ai-ruby.vercel.app/api/chat",
                     {
                         message:
                             voiceText,
@@ -315,7 +315,7 @@ function Chat() {
             setVoiceText("");
 
             await axios.delete(
-                "https://speakflow-ai-production.up.railway.app/api/chats"
+                "https://speakflow-ai-ruby.vercel.app/api/chats"
             );
 
             alert(

@@ -19,7 +19,7 @@ function Community() {
 
             const response =
                 await axios.get(
-                    "https://speakflow-ai-production.up.railway.app/api/community"
+                    "https://speakflow-ai-ruby.vercel.app/api/community"
                 );
 
             setPosts(
@@ -53,7 +53,7 @@ function Community() {
                 );
 
             await axios.post(
-                "https://speakflow-ai-production.up.railway.app/api/community",
+                "https://speakflow-ai-ruby.vercel.app/api/community",
                 {
                     name: user.name,
                     post

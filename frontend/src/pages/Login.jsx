@@ -29,7 +29,7 @@ function Login() {
     try {
 
       const response = await axios.post(
-        "https://speakflow-ai-production.up.railway.app/api/auth/login",
+        "https://speakflow-ai-ruby.vercel.app/api/auth/login",
         formData
       );
 
@@ -116,7 +116,7 @@ function Login() {
 
                   const response =
                     await axios.post(
-                      "https://speakflow-ai-production.up.railway.app/api/google-auth",
+                      "https://speakflow-ai-ruby.vercel.app/api/google-auth",
                       {
                         credential:
                           credentialResponse.credential,

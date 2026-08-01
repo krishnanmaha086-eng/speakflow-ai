@@ -45,7 +45,7 @@ function Register() {
             const response =
                 await axios.post(
 
-                    "https://speakflow-ai-production.up.railway.app/api/auth/register",
+                    "https://speakflow-ai-ruby.vercel.app/api/auth/register",
 
                     formData
 

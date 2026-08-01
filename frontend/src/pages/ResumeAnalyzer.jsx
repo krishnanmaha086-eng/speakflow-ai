@@ -26,7 +26,7 @@ function ResumeAnalyzer() {
 
             const response =
                 await axios.post(
-                    "https://speakflow-ai-production.up.railway.app/api/resume",
+                    "https://speakflow-ai-ruby.vercel.app/api/resume",
                     {
                         resumeText
                     }

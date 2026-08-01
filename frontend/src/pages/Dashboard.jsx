@@ -39,7 +39,7 @@ function Dashboard() {
             }
 
             const response = await axios.get(
-                `https://speakflow-ai-production.up.railway.app/api/user/${storedUser._id}`
+                `https://speakflow-ai-ruby.vercel.app/api/user/${storedUser._id}`
             );
 
             setUserData(response.data);
