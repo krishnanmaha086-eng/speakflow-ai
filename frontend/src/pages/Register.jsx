@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
-
+import API_URL from "../config/api";
 import Navbar from "../components/Navbar";
 
 function Register() {
@@ -45,7 +45,7 @@ function Register() {
             const response =
                 await axios.post(
 
-                    "https://speakflow-ai-ruby.vercel.app/api/auth/register",
+                    `${API_URL}/api/auth/register`,
 
                     formData
 

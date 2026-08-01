@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import Navbar from "../components/Navbar";
-
+import API_URL from "../config/api";
 function Login() {
 
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ function Login() {
     try {
 
       const response = await axios.post(
-        "https://speakflow-ai-ruby.vercel.app/api/auth/login",
+  `${API_URL}/api/auth/login`,
         formData
       );
 
@@ -116,7 +116,7 @@ function Login() {
 
                   const response =
                     await axios.post(
-                      "https://speakflow-ai-ruby.vercel.app/api/google-auth",
+                      `${API_URL}/api/auth/register`,
                       {
                         credential:
                           credentialResponse.credential,

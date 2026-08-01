@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 import axios from "axios";
-
+import API_URL from "../config/api";
 import Navbar from "../components/Navbar";
 
 function Chat() {
@@ -44,7 +44,7 @@ function Chat() {
 
             const response =
                 await axios.get(
-                    "https://speakflow-ai-ruby.vercel.app/api/chats"
+                    `${API_URL}/api/chats`
                 );
 
             const formattedChats = [];
@@ -140,7 +140,7 @@ function Chat() {
 
             const response =
                 await axios.post(
-                    "https://speakflow-ai-ruby.vercel.app/api/chat",
+                    `${API_URL}/api/chat`,
                     {
                         message:
                             voiceText,
@@ -315,7 +315,7 @@ function Chat() {
             setVoiceText("");
 
             await axios.delete(
-                "https://speakflow-ai-ruby.vercel.app/api/chats"
+                `${API_URL}/api/chats`
             );
 
             alert(

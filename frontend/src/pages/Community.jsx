@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import Navbar from "../components/Navbar";
+import API_URL from "../config/api";
 
 function Community() {
 
@@ -19,7 +20,7 @@ function Community() {
 
             const response =
                 await axios.get(
-                    "https://speakflow-ai-ruby.vercel.app/api/community"
+                    `${API_URL}/api/community`
                 );
 
             setPosts(
@@ -53,7 +54,7 @@ function Community() {
                 );
 
             await axios.post(
-                "https://speakflow-ai-ruby.vercel.app/api/community",
+                `${API_URL}/api/community`,
                 {
                     name: user.name,
                     post

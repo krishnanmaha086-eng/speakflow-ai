@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import axios from "axios";
-
+import API_URL from "../config/api";
 import Navbar from "../components/Navbar";
 
 function Vocabulary() {
@@ -21,7 +21,7 @@ function Vocabulary() {
 
             const response =
                 await axios.get(
-                    "https://speakflow-ai-ruby.vercel.app/api/vocabulary"
+                    `${API_URL}/api/vocabulary`
                 );
 
             setWordData(

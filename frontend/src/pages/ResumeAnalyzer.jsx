@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import Navbar from "../components/Navbar";
+import API_URL from "../config/api";
 
 function ResumeAnalyzer() {
 
@@ -26,7 +27,7 @@ function ResumeAnalyzer() {
 
             const response =
                 await axios.post(
-                    "https://speakflow-ai-ruby.vercel.app/api/resume",
+                    `${API_URL}/api/resume`,
                     {
                         resumeText
                     }

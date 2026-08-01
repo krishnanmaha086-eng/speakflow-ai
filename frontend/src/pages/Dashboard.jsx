@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 
 import axios from "axios";
+import API_URL from "../config/api";
 
 import {
     LineChart,
@@ -39,7 +40,7 @@ function Dashboard() {
             }
 
             const response = await axios.get(
-                `https://speakflow-ai-ruby.vercel.app/api/user/${storedUser._id}`
+                `${API_URL}/api/user/${storedUser._id}`
             );
 
             setUserData(response.data);
